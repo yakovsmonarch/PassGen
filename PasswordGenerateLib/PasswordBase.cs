@@ -17,7 +17,7 @@ public abstract class PasswordBase
         SourseSymbols = GetSymbols();
     }
 
-    public string Generate(int size)
+    public string Generate(uint size)
     {
         char[] result = new char[size];
 
