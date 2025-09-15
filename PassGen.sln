@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordGenerateLib", "Pass
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleProject", "ConsoleProject\ConsoleProject.csproj", "{B03F519C-3467-4D0A-AE11-3DF0863861F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPassGen", "TestPassGen\TestPassGen.csproj", "{47215C8E-BF77-4DCC-8E2B-70C7D0316A3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{B03F519C-3467-4D0A-AE11-3DF0863861F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B03F519C-3467-4D0A-AE11-3DF0863861F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B03F519C-3467-4D0A-AE11-3DF0863861F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47215C8E-BF77-4DCC-8E2B-70C7D0316A3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47215C8E-BF77-4DCC-8E2B-70C7D0316A3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47215C8E-BF77-4DCC-8E2B-70C7D0316A3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47215C8E-BF77-4DCC-8E2B-70C7D0316A3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
