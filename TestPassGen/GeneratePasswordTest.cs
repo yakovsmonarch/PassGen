@@ -20,7 +20,24 @@ public class GeneratePasswordTest
 
         Assert.That(BigInteger.TryParse(pass, out BigInteger numPass));
 
-        
+
         Assert.Pass();
     }
+    
+    [Test]
+    public void GenerateSymbolsPassTest([Random(0, 100, 5)] int numberRandom)
+    {
+        PasswordBase passwordBase = new SymbolsPassword();
+        string pass = passwordBase.Generate((uint)numberRandom);
+
+        Assert.That(pass.Length == numberRandom);
+
+        var superSet = new HashSet<char>(passwordBase.ToString().ToCharArray());
+        char[] subSet = pass.ToCharArray();
+        bool isSubSet = subSet.All(item => superSet.Contains(item));
+        Assert.That(isSubSet);
+
+        Assert.Pass();
+    }
+    
 }
