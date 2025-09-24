@@ -1,5 +1,4 @@
-﻿using System.Numerics;
-using PasswordGenerateLib;
+﻿using PasswordGenerateLib;
 
 namespace TestPassGen;
 
@@ -18,12 +17,11 @@ public class GeneratePasswordTest
 
         Assert.That(pass.Length == numberRandom);
 
-        Assert.That(BigInteger.TryParse(pass, out BigInteger numPass));
-
+        Assert.That(CheckSubSet(passwordBase.ToString().ToCharArray(), pass.ToCharArray()));
 
         Assert.Pass();
     }
-    
+
     [Test]
     public void GenerateSymbolsPassTest([Random(0, 100, 5)] int numberRandom)
     {
@@ -32,12 +30,18 @@ public class GeneratePasswordTest
 
         Assert.That(pass.Length == numberRandom);
 
-        var superSet = new HashSet<char>(passwordBase.ToString().ToCharArray());
-        char[] subSet = pass.ToCharArray();
-        bool isSubSet = subSet.All(item => superSet.Contains(item));
+        bool isSubSet = CheckSubSet(passwordBase.ToString().ToCharArray(), pass.ToCharArray());
         Assert.That(isSubSet);
 
         Assert.Pass();
+    }
+
+    private bool CheckSubSet(char[] superSet, char[] subSet)
+    {
+        var hashSuperSet = new HashSet<char>(superSet);
+        bool result = subSet.All(item => hashSuperSet.Contains(item));
+
+        return result;
     }
     
 }
