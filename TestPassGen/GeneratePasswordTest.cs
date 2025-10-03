@@ -36,6 +36,20 @@ public class GeneratePasswordTest
         Assert.Pass();
     }
 
+    [Test]
+    public void GenerateSpecialSymbolsPassTest([Random(0, 100, 5)] int numberRandom)
+    {
+        PasswordBase passwordBase = new SpecialPassword();
+        string pass = passwordBase.Generate((uint)numberRandom);
+
+        Assert.That(pass.Length == numberRandom);
+
+        bool isSubSet = CheckSubSet(passwordBase.ToString().ToCharArray(), pass.ToCharArray());
+        Assert.That(isSubSet);
+
+        Assert.Pass();
+    }
+
     private bool CheckSubSet(char[] superSet, char[] subSet)
     {
         var hashSuperSet = new HashSet<char>(superSet);
