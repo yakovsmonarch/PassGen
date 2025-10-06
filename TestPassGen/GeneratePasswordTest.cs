@@ -2,7 +2,7 @@
 
 namespace TestPassGen;
 
-public class GeneratePasswordTest
+public class GeneratePasswordTest : BaseTest
 {
     [SetUp]
     public void Setup()
@@ -49,13 +49,4 @@ public class GeneratePasswordTest
 
         Assert.Pass();
     }
-
-    private bool CheckSubSet(char[] superSet, char[] subSet)
-    {
-        var hashSuperSet = new HashSet<char>(superSet);
-        bool result = subSet.All(item => hashSuperSet.Contains(item));
-
-        return result;
-    }
-    
 }

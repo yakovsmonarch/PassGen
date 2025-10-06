@@ -2,7 +2,7 @@ namespace PasswordGenerateLib;
 
 public class SpecialPassword : PasswordBase
 {
-    public SpecialPassword(PasswordBase passwordBase) : base(passwordBase)
+    public SpecialPassword(params PasswordBase[] passwordBase) : base(passwordBase)
     {
         
     }

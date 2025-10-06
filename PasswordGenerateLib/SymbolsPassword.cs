@@ -2,7 +2,7 @@ namespace PasswordGenerateLib;
 
 public class SymbolsPassword : PasswordBase
 {
-    public SymbolsPassword(PasswordBase passwordBase) : base(passwordBase)
+    public SymbolsPassword(params PasswordBase[] passwordBase) : base(passwordBase)
     {
     }
 

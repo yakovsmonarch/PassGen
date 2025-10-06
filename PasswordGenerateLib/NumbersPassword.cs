@@ -2,7 +2,7 @@ namespace PasswordGenerateLib;
 
 public class NumbersPassword : PasswordBase
 {
-    public NumbersPassword(PasswordBase passwordBase) : base(passwordBase)
+    public NumbersPassword(params PasswordBase[] passwordBase) : base(passwordBase)
     {
     }
 

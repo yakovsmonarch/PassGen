@@ -6,10 +6,13 @@ public abstract class PasswordBase
 
     private Random _random = new Random();
 
-    public PasswordBase(PasswordBase passwordBase)
+    public PasswordBase(params PasswordBase[] passwordBase)
     {
         SourseSymbols = GetSymbols();
-        SourseSymbols += passwordBase.ToString();
+        foreach (PasswordBase p in passwordBase)
+        {
+            SourseSymbols += p.ToString();
+        }
     }
 
     public PasswordBase()
