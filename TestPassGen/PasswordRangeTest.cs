@@ -17,7 +17,7 @@ public class PasswordRangeTest : BaseTest
         PasswordBase symbolsPass = new SymbolsPassword();
         _ranges.Add(symbolsPass.ToString());
 
-        PasswordBase specialPass = new NumbersPassword();
+        PasswordBase specialPass = new SpecialPassword();
         _ranges.Add(specialPass.ToString());
 
 
@@ -29,10 +29,18 @@ public class PasswordRangeTest : BaseTest
     public void CheckSymblsTest()
     {
         string password = _passwordBase.Generate((uint)_ranges.Count);
-        foreach (string item in _ranges)
+        foreach (string rang in _ranges)
         {
-            bool result = CheckSubSet(item.ToCharArray(), password.ToCharArray());
-            Assert.That(result);
+            bool presence = false;
+            foreach (char ch in password)
+            {
+                if (rang.Contains(ch))
+                {
+                    presence = true;
+                    break;
+                }
+            }
+            Assert.That(presence);
         }
         Assert.Pass();
     }
