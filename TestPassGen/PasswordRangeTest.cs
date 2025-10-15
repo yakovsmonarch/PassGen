@@ -6,11 +6,13 @@ public class PasswordRangeTest : BaseTest
 {
     private PasswordBase _passwordBase;
 
-    private List<string> _ranges = new List<string>();
+    private List<string> _ranges;
 
     [SetUp]
     public void Setup()
     {
+        _ranges = new List<string>();
+
         PasswordBase numberPass = new NumbersPassword();
         _ranges.Add(numberPass.ToString());
 
@@ -26,6 +28,7 @@ public class PasswordRangeTest : BaseTest
     }
 
     [Test]
+    [Repeat(10)]
     public void CheckSymblsTest()
     {
         string password = _passwordBase.Generate((uint)_ranges.Count);
@@ -40,7 +43,7 @@ public class PasswordRangeTest : BaseTest
                     break;
                 }
             }
-            Assert.That(presence);
+            Assert.That(presence, password);
         }
         Assert.Pass();
     }
